@@ -1,2 +1,12 @@
 const http = require('http');
-const server = http.createServer();
+const fs = require('fs');
+const path = require('path');
+
+const server = http.createServer((req, res) => {
+    const file = fs.readFileSync(path.join(__dirname, '20MB.zip'));
+    res.end(file);
+});
+server.listen(8080, () => console.log('Open http://localhost:8080 in your browser.'));
+server.on('listening', () => {
+    console.log("Server started");
+})
