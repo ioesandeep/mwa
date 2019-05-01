@@ -1,0 +1,1 @@
+As the documentation says, **`process.nextTick()`** will always be executed before **`setImmediate()`**. Partly because, **`process.nextTick`** fires immediately in the same phase while **`setImmediate()`** fires on the following iteration or 'tick' of the event loop.
