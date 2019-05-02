@@ -9,6 +9,7 @@
   "author": "Sandeep Giri",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.24.0",
     "rxjs": "^6.5.1"
   }
 }
