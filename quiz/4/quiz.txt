@@ -1,0 +1,11 @@
+1. POST method is used when we need to create new document in our application while PUT is used when we need to update the whole document.
+2. DELETE is not safe since it is used to delete a document. So every time a DELETE request is sent to the server it deletes some resource on the server.
+   It is idempotent in the sense that it can delete only one document. So, every time a DELETE request is sent to the server it should look for the selected 
+   resource and delete it. It should do nothing if the resource does not exist.
+3. While it is possible to update a resource using GET method, but the rest standard does not encourage this approach.
+4. Every REST response should contain proper status header based on the request. For e.g., a get method should have a 200 OK status code, update is 201,
+   server errors are 50*. Also, the response data should be consistent. Every error response should have an error code and a message in the response object.
+   Similarly, every successful response should contain a  data property in the response object.
+5. Paging is important to prevent high traffic on the server and the database. So not every resource is loaded at once with every request. Caching is important
+   so the client (browser) need not request the server for the same resource every time but instead keep a copy of the resource on the client.
+6. 
