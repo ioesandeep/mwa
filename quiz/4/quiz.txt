@@ -6,6 +6,6 @@
 4. Every REST response should contain proper status header based on the request. For e.g., a get method should have a 200 OK status code, update is 201,
    server errors are 50*. Also, the response data should be consistent. Every error response should have an error code and a message in the response object.
    Similarly, every successful response should contain a  data property in the response object.
-5. Paging is important to prevent high traffic on the server and the database. So not every resource is loaded at once with every request. Caching is important
-   so the client (browser) need not request the server for the same resource every time but instead keep a copy of the resource on the client.
+5. Paging is important to prevent high traffic on the server and scale the application. So not every resource is loaded at once with every request. 
+   Caching is important so the client (browser) need not request the server for the same resource every time but instead keep a copy of the resource on the client.
 6. 
