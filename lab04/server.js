@@ -1,6 +1,5 @@
 const http = require('http');
 const {Subject, fromEvent} = require('rxjs');
-const {map, filter} = require('rxjs/operators');
 const url = require('url');
 const {fork} = require('child_process');
 
@@ -24,15 +23,15 @@ function doParseFile({req, res}) {
     childProcess.send(query.url);
 
     const subscriber = new FileReadSubscriber(res);
-    fromEvent(childProcess.stdout, 'data').subscribe(subscriber);
-    fromEvent(childProcess, 'complete').subscribe(data => console.log('dfdcdsc'));
-
-    fromEvent(childProcess, 'message')
-        .pipe(
-            map(data => data.shift()),
-            filter(data => typeof data !== typeof undefined)
-        )
-        .subscribe(response => res.end(response));
+    fromEvent(childProcess.stdout, 'data')
+    // .pipe(
+    //     tap((data) => {
+    //         console.log('Data')
+    //         console.log(data.toString());
+    //     })
+    // )
+        .subscribe(subscriber);
+    fromEvent(childProcess.stdout, 'end').subscribe(subscriber);
 }
 
 class FileReadSubscriber {
@@ -41,8 +40,16 @@ class FileReadSubscriber {
     }
 
     next(data) {
-        console.log('Data received');
+        if (typeof data === typeof undefined) {
+            this.res.end();
+            return;
+        }
+
         this.res.write(data);
+    }
+
+    error(err) {
+        console.log(err);
     }
 
     complete() {
