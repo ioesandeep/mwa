@@ -50,6 +50,7 @@ class FileReadSubscriber {
 
     error(err) {
         console.log(err);
+        this.res.end();
     }
 
     complete() {
