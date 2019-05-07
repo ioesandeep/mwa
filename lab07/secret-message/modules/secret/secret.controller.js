@@ -8,7 +8,7 @@ class SecretController {
     async reveal(req, res) {
         try {
             const secret = await this.service.getSecret();
-            res.json({secret});
+            res.send(secret);
         } catch (e) {
             res.json({code: e.code || 500, message: e.message});
         }

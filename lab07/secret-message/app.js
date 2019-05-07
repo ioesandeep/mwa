@@ -31,7 +31,7 @@ app.use(cors());
 app.use(logger.morgan);
 
 //initialize router
-app.use('/api/v1', routes.router);
+app.use('/', routes.router);
 
 //create our server
 const server = http.createServer(app);
