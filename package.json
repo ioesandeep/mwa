@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node lab06/app.js"
+    "lab06": "node lab06/app.js"
   },
   "author": "Sandeep Giri",
   "license": "ISC",
