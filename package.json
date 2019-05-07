@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lab06": "node lab06/app.js"
+    "secret": "node lab07/secret-message/app.js"
   },
   "author": "Sandeep Giri",
   "license": "ISC",
@@ -12,7 +12,9 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "moment": "^2.24.0",
+    "mongodb": "^3.2.3",
     "morgan": "^1.9.1",
-    "rxjs": "^6.5.1"
+    "rxjs": "^6.5.1",
+    "simple-encryptor": "^3.0.0"
   }
 }
