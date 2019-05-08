@@ -18,5 +18,5 @@
 - db.restaurants.find().sort({name:1})
 - db.restaurants.find().sort({name:-1})
 - db.restaurants.find().sort({cuisine:1,district:-1})
-- 
+- db.restaurants.find({"address.coord":{$type:"double"}})
 - db.restaurants.find({name:{$regex:/^Mad/}},{name:1,cuisine:1,district:1,"address.coord":1})
