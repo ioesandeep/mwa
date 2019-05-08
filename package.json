@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lab06": "node lab06/app.js",
+    "secret": "node lab07/secret-message/app.js"
   },
   "author": "Sandeep Giri",
   "license": "ISC",
@@ -13,10 +14,13 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
-    "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
     "moment": "^2.24.0",
-    "morgan": "~1.9.1",
-    "rxjs": "^6.5.1"
+    "mongodb": "^3.2.3",
+    "morgan": "^1.9.1",
+    "rxjs": "^6.5.1",
+    "simple-encryptor": "^3.0.0"
   }
 }
