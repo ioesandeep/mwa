@@ -1,28 +1,14 @@
 const {db} = require('../../db');
 const config = require('../../config');
-const encryption = require('simple-encryptor');
 
 class PlaceService {
-    async getSecret() {
+    async addPlace(data) {
         const inst = await db.instance();
-        const data = await inst
-            .collection(config.collections.secret)
-            .find({})
-            .project({
-                key: 1,
-                message: 1,
-                _id: 0
-            })
-            .limit(1)
-            .toArray();
+        inst.collection(config.collections.locations).insert(data);
+    }
 
-        if (!data || data.length === 0) {
-            return;
-        }
-
-        const secret = data.pop();
-        const encryptor = encryption(secret.key);
-        return encryptor.decrypt(secret.message);
+    async findPlaces(criteria) {
+        return [];
     }
 }
 

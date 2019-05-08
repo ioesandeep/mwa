@@ -7,6 +7,6 @@ module.exports = {
         uri: "mongodb://homework01:homework01@ds233806.mlab.com:33806/homework01"
     },
     collections: {
-        secret: "data"
+        locations: "locations"
     }
 };
