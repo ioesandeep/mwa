@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lab06": "node lab06/app.js",
-    "secret": "node lab07/secret-message/app.js"
+    "secret": "node lab07/secret-message/app.js",
+    "places": "node lab08/application/app.js"
   },
   "author": "Sandeep Giri",
   "license": "ISC",

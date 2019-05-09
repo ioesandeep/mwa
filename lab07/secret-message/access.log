@@ -55,3 +55,6 @@
 ::1 - - [07/May/2019:19:49:11 +0000] "GET /secret HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
 ::1 - - [07/May/2019:19:51:15 +0000] "GET /secret HTTP/1.1" 200 61 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
 ::1 - - [07/May/2019:19:51:56 +0000] "GET /secret HTTP/1.1" 200 26 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+::1 - - [08/May/2019:18:45:15 +0000] "GET /secret HTTP/1.1" 200 64 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+::1 - - [08/May/2019:18:45:15 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/secret" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+::1 - - [08/May/2019:18:45:37 +0000] "GET /secret HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
