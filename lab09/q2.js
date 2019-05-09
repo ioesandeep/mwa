@@ -30,6 +30,6 @@ const config = require('./config');
     } catch (e) {
         console.log(e);
     } finally {
-        process.emit(0);
+        process.exit(0);
     }
 })();
