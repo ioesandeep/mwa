@@ -16,7 +16,10 @@ const config = require('./config');
             }, {
                 $project: {
                     _id: 0,
-                    zip: '$_id'
+                    zip: '$_id',
+                    pop: 1,
+                    city: 1,
+                    state: 1
                 }
             }, {
                 $sort: {zip: 1}
