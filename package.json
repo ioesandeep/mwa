@@ -6,7 +6,8 @@
   "scripts": {
     "lab06": "node lab06/app.js",
     "secret": "node lab07/secret-message/app.js",
-    "places": "node lab08/application/app.js"
+    "places": "node lab08/application/app.js",
+    "build": "webpack ./lab11/js/app.js -o ./lab11/dist/bundle.js --devtool source-map"
   },
   "author": "Sandeep Giri",
   "license": "ISC",
@@ -18,5 +19,9 @@
     "morgan": "^1.9.1",
     "rxjs": "^6.5.1",
     "simple-encryptor": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   }
 }
