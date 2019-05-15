@@ -11,6 +11,7 @@ import {Component, ViewChild} from '@angular/core';
     <counter [counterValue]="countStart%3" (counterChange)="getCount($event)">
       <h4 class="count">Counter component 2</h4>
     </counter>
+    <app-smart><h3>This is smart component</h3></app-smart>
   `
 })
 export class AppComponent {
