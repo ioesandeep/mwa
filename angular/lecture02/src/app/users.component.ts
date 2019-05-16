@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {ApiService} from "./api.service";
+import {UserInterface} from "./user.interface";
 
 @Component({
   selector: 'app-users',
@@ -32,10 +33,10 @@ import {ApiService} from "./api.service";
     </table>`
 })
 export class UsersComponent {
-  private users: Array<any>;
+  private users: Array<UserInterface>;
 
   constructor(private api: ApiService) {
-    this.users = api.getCachedData('users');
+    this.users = api.getCachedData();
   }
 
   public getUserName(user: any): string {
