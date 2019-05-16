@@ -4,9 +4,9 @@ module.exports = {
         name: "mum",
         user: "sagiri",
         pass: "csdmwa",
-        uri: "mongodb+srv://sagiri:csdmwa@cluster0-pykct.mongodb.net/test?retryWrites=true"
+        uri: "mongodb+srv://sagiri:<password>@cluster0-pykct.mongodb.net/test?retryWrites=true"
     },
     collections: {
-        locations: "locations"
+        secret: "data"
     }
 };

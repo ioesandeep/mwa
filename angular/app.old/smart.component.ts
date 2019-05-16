@@ -21,7 +21,7 @@ export class SmartComponent implements OnInit, OnChanges {
       },
       {
         name: "Dumb 2",
-        isVisible: true
+        isVisible: false
       },
       {
         name: "Dumb 3",
