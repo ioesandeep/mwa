@@ -11,14 +11,13 @@ class PlaceController {
             if (!data) {
                 throw {message: "Data expected with this request.", code: 400}
             }
+
             if (!data.name) {
                 throw {message: "Name is required.", code: 400}
             }
+
             if (!data.category) {
                 throw {message: "Category is required.", code: 400}
-            }
-            if (!data.location || data.location.length !== 2) {
-                throw {message: "Location is invalid.", code: 400}
             }
 
             await this.service.addPlace(data);

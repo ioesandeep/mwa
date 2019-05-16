@@ -7,7 +7,11 @@ subject = new Subject();
 subject.subscribe(doParseFile);
 
 http
-    .createServer((req, res) => subject.next({req, res}))
+    .createServer((req, res) => {
+        //subject.next({req, res})
+        res.writeHead(200, 'text/plain');
+        res.end("PID: " + process.pid);
+    })
     .listen(4040)
     .on('listening', () => console.log("Open http://localhost:4040/ in your browser."));
 
