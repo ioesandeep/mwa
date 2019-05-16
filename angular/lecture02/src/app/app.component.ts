@@ -1,30 +1,29 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit} from "@angular/core";
+import {ApiService} from "./api.service";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-root',
   template: `
-    <p><strong>App Component</strong></p>
-    <p>Current value of counter is {{componentCounterValue}}</p>
-    <counter [counterValue]="countStart" (counterChange)="getCount($event)">
-      <h4 class="count">Counter component 1</h4>
-    </counter>
-    <counter [counterValue]="countStart%3" (counterChange)="getCount($event)">
-      <h4 class="count">Counter component 2</h4>
-    </counter>
-    <app-smart><h3>This is smart component</h3></app-smart>
+    <ul>
+      <li><a [routerLink]="['']">Home</a></li>
+      <li><a [routerLink]="['users']">Users</a></li>
+    </ul>
+    <router-outlet></router-outlet>
   `
 })
-export class AppComponent {
-  private title: string;
-  private countStart: number;
-  private componentCounterValue: number;
+export class AppComponent implements OnDestroy {
+  private subscription: Subscription;
 
-  constructor() {
-    this.title = 'Angular MWA';
-    this.countStart = new Date().getTime() % 10;
+  constructor(private api: ApiService) {
+    this.subscription = this.api
+      .getOnlineData()
+      .subscribe((data: { results: Array<any> }) => {
+        localStorage.setItem("users", JSON.stringify(data.results));
+      });
   }
 
-  public getCount(count: number): void {
-    this.componentCounterValue = count;
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

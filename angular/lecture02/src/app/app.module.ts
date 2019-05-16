@@ -1,25 +1,20 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-
-import {AppComponent} from './app.component';
-import {CounterComponent} from './counter.component';
-import {SmartComponent} from './smart.component';
-import {DumbComponent} from './dumb.component';
-import {IsVisibleDirective} from './isvisible.directive';
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app.component";
+import {BrowserModule} from "@angular/platform-browser";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.routes";
+import {HomeComponent} from "./home.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CounterComponent,
-    SmartComponent,
-    DumbComponent,
-    IsVisibleDirective
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }
